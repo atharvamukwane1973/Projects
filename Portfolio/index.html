@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Atharva Mukwane — Computer Engineering student portfolio. Python, AI, and software development projects." />
+  <title>Atharva Mukwane | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="aurora">
+  <div class="bg-gradient" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <header class="header" id="header">
+    <nav class="nav container">
+      <button type="button" class="nav-logo" id="navLogoBtn" aria-label="Home">
+        <span class="nav-logo-inner">AM</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about"><span class="nav-ico">👤</span> About</a></li>
+        <li><a href="#skills"><span class="nav-ico">⚡</span> Skills</a></li>
+        <li><a href="#experience"><span class="nav-ico">💼</span> Experience</a></li>
+        <li><a href="#projects"><span class="nav-ico">🚀</span> Projects</a></li>
+        <li><a href="#certifications"><span class="nav-ico">🏆</span> Certs</a></li>
+        <li><a href="#education"><span class="nav-ico">🎓</span> Education</a></li>
+        <li><a href="#contact" class="nav-cta"><span class="nav-ico">✉</span> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <p class="hero-greeting" id="heroGreeting">Hello, I'm</p>
+          <h1 class="hero-name" id="heroName">Atharva Mukwane</h1>
+          <p class="hero-title" id="heroTitle">Computer Engineering Student | Python Learner | Tech Enthusiast</p>
+          <p class="hero-intro" id="heroIntro">I am a first-year engineering student passionate about coding, AI, and building projects while continuously improving my skills.</p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary" id="resumeDownloadBtn" disabled>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span id="resumeDownloadLabel">Download Resume</span>
+            </button>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+          <button type="button" class="btn btn-ghost btn-sm owner-only section-edit-btn" id="editHeroSectionBtn">✎ Edit hero</button>
+          <p class="resume-hint" id="resumePublicHint">Recruiters: download my resume (PDF) above.</p>
+        </div>
+        <div class="hero-image-wrap reveal reveal-delay">
+          <div class="profile-upload" id="profileUploadWrap" role="img" aria-label="Profile photo">
+            <img id="profileImage" src="assets/profile.jpg" alt="Atharva Mukwane" class="profile-img" />
+            <div class="profile-overlay owner-only" id="profileOverlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              <span>Adjust photo</span>
+            </div>
+            <span class="profile-initials" id="profileInitials">AM</span>
+          </div>
+          <div class="hero-ring"></div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-indicator" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header-row">
+          <h2 class="section-title reveal"><span class="title-ico">👤</span> About Me</h2>
+          <button type="button" class="btn btn-outline btn-sm owner-only section-edit-btn" id="editAboutSectionBtn">✎ Edit</button>
+        </div>
+        <div class="about-grid">
+          <div class="glass-card about-text reveal" id="aboutText"></div>
+          <div class="strengths glass-card reveal reveal-delay">
+            <h3><span class="title-ico-sm">💪</span> Strengths</h3>
+            <ul class="strength-list" id="strengthList"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <h2 class="section-title reveal"><span class="title-ico">⚡</span> Skills</h2>
+            <p class="section-subtitle reveal" id="skillsSubtitle"></p>
+          </div>
+          <button type="button" class="btn btn-outline btn-sm owner-only section-edit-btn" id="editSkillsSectionBtn">✎ Edit</button>
+        </div>
+        <div class="skills-category reveal">
+          <h3>Programming</h3>
+          <div class="skills-grid" id="skillsGrid"></div>
+        </div>
+        <div class="skills-category reveal">
+          <h3>Tools</h3>
+          <div class="tool-cards" id="toolsGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header-row reveal">
+          <div>
+            <h2 class="section-title"><span class="title-ico">💼</span> Internship & Experience</h2>
+            <p class="section-subtitle section-subtitle-inline" id="expSubtitle">Internships and work experience.</p>
+          </div>
+          <button type="button" class="btn btn-primary owner-only" id="addInternBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Internship
+          </button>
+        </div>
+        <div class="experience-grid" id="experienceGrid"></div>
+        <p class="exp-empty-hint" id="expEmptyHint">No internships listed yet.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-header-row reveal">
+          <div>
+            <h2 class="section-title"><span class="title-ico">🚀</span> Projects</h2>
+            <p class="section-subtitle reveal" id="projectsSubtitle"></p>
+          </div>
+          <button type="button" class="btn btn-primary owner-only" id="addProjectBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Project
+          </button>
+        </div>
+        <div class="projects-grid" id="projectsGrid"></div>
+        <p class="exp-empty-hint hidden" id="projectsEmptyHint">No projects yet.</p>
+      </div>
+    </section>
+
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section-header-row reveal">
+          <div>
+            <h2 class="section-title"><span class="title-ico">🏆</span> Certifications</h2>
+            <p class="section-subtitle section-subtitle-inline" id="certSubtitle">Click a certificate to view full size.</p>
+          </div>
+          <button type="button" class="btn btn-primary owner-only" id="addCertBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Certificate
+          </button>
+        </div>
+        <div class="cert-grid" id="certGrid"></div>
+        <p class="cert-empty-hint" id="certEmptyHint">No certificates listed yet.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="education">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="title-ico">🎓</span> Education</h2>
+        <div class="edu-card glass-card reveal" id="educationCard"></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="title-ico">✉</span> Get In Touch</h2>
+        <p class="section-subtitle reveal" id="contactSubtitle"></p>
+        <div class="contact-grid reveal" id="contactGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Internship modal -->
+  <div class="modal" id="internModal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" data-close-intern-modal></div>
+    <div class="modal-content glass-card modal-lg">
+      <button type="button" class="modal-close" data-close-intern-modal aria-label="Close">&times;</button>
+      <h3 id="internModalTitle">Add Internship</h3>
+      <form id="internForm">
+        <input type="hidden" id="internEditId" value="" />
+        <label class="form-label" for="internTitle">Internship title</label>
+        <input type="text" id="internTitle" class="form-input" required />
+        <label class="form-label" for="internCompany">Company</label>
+        <input type="text" id="internCompany" class="form-input" required />
+        <label class="form-label" for="internDuration">Duration</label>
+        <input type="text" id="internDuration" class="form-input" required />
+        <label class="form-label" for="internDescription">About this internship</label>
+        <textarea id="internDescription" class="form-textarea" rows="4" required></textarea>
+        <label class="form-label" for="internAchievements">Achievements (one per line)</label>
+        <textarea id="internAchievements" class="form-textarea" rows="4"></textarea>
+        <label class="form-label" for="internSkills">Skills (comma separated)</label>
+        <input type="text" id="internSkills" class="form-input" />
+        <div class="intern-docs-grid">
+          <div class="intern-doc-block">
+            <label class="form-label">Offer letter</label>
+            <div class="doc-dropzone" id="offerDropzone">
+              <input type="file" id="offerFileInput" accept="image/*,application/pdf,.pdf" hidden />
+              <div class="doc-dropzone-inner" id="offerDropzoneInner"><span>Upload offer letter</span></div>
+              <p class="doc-filename" id="offerFileName"></p>
+            </div>
+            <button type="button" class="btn btn-ghost btn-sm" id="offerClearBtn">Remove file</button>
+          </div>
+          <div class="intern-doc-block">
+            <label class="form-label">Completion certificate</label>
+            <div class="doc-dropzone" id="completionDropzone">
+              <input type="file" id="completionFileInput" accept="image/*,application/pdf,.pdf" hidden />
+              <div class="doc-dropzone-inner" id="completionDropzoneInner"><span>Upload certificate</span></div>
+              <p class="doc-filename" id="completionFileName"></p>
+            </div>
+            <button type="button" class="btn btn-ghost btn-sm" id="completionClearBtn">Remove file</button>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" data-close-intern-modal>Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Internship</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cert modal -->
+  <div class="modal" id="certModal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-content glass-card">
+      <button type="button" class="modal-close" data-close-modal aria-label="Close">&times;</button>
+      <h3 id="certModalTitle">Add Certificate</h3>
+      <form id="certForm">
+        <input type="hidden" id="certEditId" value="" />
+        <label class="form-label">Certificate image
+          <div class="cert-dropzone" id="certDropzone">
+            <input type="file" id="certFileInput" accept="image/jpeg,image/png,image/webp" hidden />
+            <img id="certPreview" alt="" class="cert-preview-img hidden" />
+            <div class="cert-dropzone-inner" id="certDropzoneInner">
+              <span>Click or drag image</span>
+            </div>
+          </div>
+        </label>
+        <label class="form-label" for="certTitle">Title</label>
+        <input type="text" id="certTitle" class="form-input" required />
+        <label class="form-label" for="certIssuer">Issuer</label>
+        <input type="text" id="certIssuer" class="form-input" required />
+        <label class="form-label" for="certYear">Year</label>
+        <input type="text" id="certYear" class="form-input" required />
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" data-close-modal>Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img id="lightboxImg" src="" alt="View" />
+  </div>
+
+  <!-- Content edit modals -->
+  <div class="modal" id="heroModal" aria-hidden="true"><div class="modal-backdrop" data-close-hero></div><div class="modal-content glass-card modal-lg"><button type="button" class="modal-close" data-close-hero>&times;</button><h3>Edit Hero</h3><form id="heroForm"><label class="form-label" for="editHeroGreeting">Greeting</label><input id="editHeroGreeting" class="form-input" required /><label class="form-label" for="editHeroName">Full name</label><input id="editHeroName" class="form-input" required /><label class="form-label" for="editHeroTitle">Title line</label><input id="editHeroTitle" class="form-input" required /><label class="form-label" for="editHeroIntro">Introduction</label><textarea id="editHeroIntro" class="form-textarea" rows="3" required></textarea><div class="modal-actions"><button type="button" class="btn btn-outline" data-close-hero>Cancel</button><button type="submit" class="btn btn-primary">Save</button></div></form></div></div>
+
+  <div class="modal" id="aboutModal" aria-hidden="true"><div class="modal-backdrop" data-close-about></div><div class="modal-content glass-card modal-lg"><button type="button" class="modal-close" data-close-about>&times;</button><h3>Edit About</h3><form id="aboutForm"><label class="form-label" for="editAboutParagraphs">Paragraphs (blank line between)</label><textarea id="editAboutParagraphs" class="form-textarea" rows="6"></textarea><label class="form-label" for="editAboutStrengths">Strengths: icon|text per line (icons: zap, chart, search, robot)</label><textarea id="editAboutStrengths" class="form-textarea" rows="5"></textarea><div class="modal-actions"><button type="button" class="btn btn-outline" data-close-about>Cancel</button><button type="submit" class="btn btn-primary">Save</button></div></form></div></div>
+
+  <div class="modal" id="skillsModal" aria-hidden="true"><div class="modal-backdrop" data-close-skills></div><div class="modal-content glass-card modal-lg"><button type="button" class="modal-close" data-close-skills>&times;</button><h3>Edit Skills</h3><form id="skillsForm"><label class="form-label" for="editSkillsSubtitle">Subtitle</label><input id="editSkillsSubtitle" class="form-input" /><label class="form-label" for="editSkillsProgramming">Programming: name|level|badge per line</label><textarea id="editSkillsProgramming" class="form-textarea" rows="6"></textarea><label class="form-label" for="editSkillsTools">Tools: icon|name per line</label><textarea id="editSkillsTools" class="form-textarea" rows="4"></textarea><div class="modal-actions"><button type="button" class="btn btn-outline" data-close-skills>Cancel</button><button type="submit" class="btn btn-primary">Save</button></div></form></div></div>
+
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-project></div>
+    <div class="modal-content glass-card modal-lg">
+      <button type="button" class="modal-close" data-close-project aria-label="Close">&times;</button>
+      <h3 id="projectModalTitle">Add Project</h3>
+      <form id="projectForm">
+        <label class="form-label">Icon / emoji</label>
+        <div class="emoji-picker" id="projEmojiPicker" role="listbox" aria-label="Choose icon"></div>
+        <input type="text" id="editProjIcon" class="form-input" placeholder="Tap above or paste any emoji" maxlength="8" />
+        <div class="emoji-preview-row">
+          <span>Preview:</span>
+          <span class="project-icon emoji-preview" id="projIconPreview">✨</span>
+        </div>
+        <label class="form-label" for="editProjTitle">Project title</label>
+        <input type="text" id="editProjTitle" class="form-input" required />
+        <label class="form-label" for="editProjTech">Tech stack</label>
+        <input type="text" id="editProjTech" class="form-input" placeholder="Python · AI" />
+        <label class="form-label" for="editProjDesc">Description</label>
+        <textarea id="editProjDesc" class="form-textarea" rows="3" required></textarea>
+        <label class="form-label" for="editProjGithub">GitHub URL (optional)</label>
+        <input type="url" id="editProjGithub" class="form-input" placeholder="https://github.com/..." />
+        <label class="form-label" for="editProjDemo">Live demo URL (optional)</label>
+        <input type="url" id="editProjDemo" class="form-input" placeholder="https://..." />
+        <label class="form-label" for="editProjWhatsapp">WhatsApp number (optional)</label>
+        <input type="tel" id="editProjWhatsapp" class="form-input" placeholder="+91 9876543210" />
+        <label class="form-label" for="editProjWhatsappMsg">WhatsApp pre-filled message (optional)</label>
+        <input type="text" id="editProjWhatsappMsg" class="form-input" placeholder="Hi! I saw your project..." />
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" data-close-project>Cancel</button>
+          <button type="submit" class="btn btn-primary">Save project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="educationModal" aria-hidden="true"><div class="modal-backdrop" data-close-education></div><div class="modal-content glass-card modal-lg"><button type="button" class="modal-close" data-close-education>&times;</button><h3>Edit Education</h3><form id="educationForm"><label class="form-label" for="editEduStatus">Status badge</label><input id="editEduStatus" class="form-input" /><label class="form-label" for="editEduDegree">Degree</label><input id="editEduDegree" class="form-input" /><label class="form-label" for="editEduCollege">College</label><input id="editEduCollege" class="form-input" /><label class="form-label" for="editEduYear">Years</label><input id="editEduYear" class="form-input" /><label class="form-label" for="editEduCourses">Courses (one per line)</label><textarea id="editEduCourses" class="form-textarea" rows="6"></textarea><div class="modal-actions"><button type="button" class="btn btn-outline" data-close-education>Cancel</button><button type="submit" class="btn btn-primary">Save</button></div></form></div></div>
+
+  <div class="modal" id="contactModal" aria-hidden="true"><div class="modal-backdrop" data-close-contact></div><div class="modal-content glass-card modal-lg"><button type="button" class="modal-close" data-close-contact>&times;</button><h3>Edit Contact</h3><form id="contactForm"><label class="form-label" for="editContactSubtitle">Subtitle</label><input id="editContactSubtitle" class="form-input" /><label class="form-label" for="editContactItems">Items: type|label|value|link per line</label><p class="form-hint">Types: email, linkedin, github, phone. Link empty for phone.</p><textarea id="editContactItems" class="form-textarea" rows="6"></textarea><div class="modal-actions"><button type="button" class="btn btn-outline" data-close-contact>Cancel</button><button type="submit" class="btn btn-primary">Save</button></div></form></div></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="modal" id="ownerLoginModal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" data-close-owner-login></div>
+    <div class="modal-content glass-card modal-sm login-card">
+      <button type="button" class="modal-close" data-close-owner-login aria-label="Close">&times;</button>
+      <div class="login-logo">AM</div>
+      <h3 id="ownerLoginTitle">Private access</h3>
+      <p class="modal-desc" id="ownerLoginDesc">Enter your passkey to edit your portfolio.</p>
+      <form id="ownerLoginForm">
+        <label class="form-label" for="ownerPin">Passkey (4–8 digits)</label>
+        <input type="password" id="ownerPin" class="form-input" inputmode="numeric" maxlength="8" placeholder="••••" required autocomplete="off" />
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" data-close-owner-login>Cancel</button>
+          <button type="submit" class="btn btn-primary">Unlock</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="profileModal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" data-close-profile-modal></div>
+    <div class="modal-content glass-card modal-lg">
+      <button type="button" class="modal-close" data-close-profile-modal>&times;</button>
+      <h3>Adjust profile photo</h3>
+      <div class="profile-editor">
+        <div class="profile-editor-preview-wrap">
+          <div class="profile-editor-preview"><img id="profilePreviewImg" alt="" class="profile-img hidden" /><span class="profile-initials" id="profilePreviewInitials">AM</span></div>
+        </div>
+        <div class="profile-editor-controls">
+          <label class="form-label" for="profileModalInput">Upload photo</label>
+          <input type="file" id="profileModalInput" class="form-input-file" accept="image/*" />
+          <label class="form-label" for="profileZoom">Zoom <span class="range-value" id="profileZoomVal">100%</span></label>
+          <input type="range" id="profileZoom" class="form-range" min="100" max="200" value="100" step="5" />
+          <label class="form-label" for="profilePosX">Left / right <span class="range-value" id="profilePosXVal">50%</span></label>
+          <input type="range" id="profilePosX" class="form-range" min="0" max="100" value="50" />
+          <label class="form-label" for="profilePosY">Up / down <span class="range-value" id="profilePosYVal">50%</span></label>
+          <input type="range" id="profilePosY" class="form-range" min="0" max="100" value="50" />
+          <div class="owner-actions">
+            <button type="button" class="btn btn-ghost btn-sm" id="profileResetAdjustBtn">Reset</button>
+            <button type="button" class="btn btn-outline btn-danger-outline btn-sm" id="profileRemoveBtn">Remove</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline" data-close-profile-modal>Cancel</button>
+        <button type="button" class="btn btn-primary" id="profileSaveBtn">Save photo</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="ownerPanelModal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" data-close-owner-panel></div>
+    <div class="modal-content glass-card modal-xl owner-hub">
+      <button type="button" class="modal-close" data-close-owner-panel aria-label="Close">&times;</button>
+      <h3>✦ Owner control center</h3>
+      <p class="modal-desc">Edit every section of your portfolio. Recruiters only see the public view.</p>
+
+      <h4 class="owner-section-label">🎨 Background theme</h4>
+      <p class="modal-desc">Choose a look for your portfolio (saved on this device).</p>
+      <div class="theme-picker" id="themePicker">
+        <button type="button" class="theme-option active" data-theme="aurora" title="Soft purple & cyan">
+          <span class="theme-swatch theme-swatch-aurora"></span>
+          <span>Aurora</span>
+        </button>
+        <button type="button" class="theme-option" data-theme="sunrise" title="Warm peach & gold">
+          <span class="theme-swatch theme-swatch-sunrise"></span>
+          <span>Sunrise</span>
+        </button>
+        <button type="button" class="theme-option" data-theme="ocean" title="Fresh blue & teal">
+          <span class="theme-swatch theme-swatch-ocean"></span>
+          <span>Ocean</span>
+        </button>
+      </div>
+
+      <hr class="modal-divider" />
+      <div class="owner-hub-grid">
+        <button type="button" class="hub-card" id="openProfileEditorBtn"><span class="hub-ico">📷</span><span>Profile photo</span></button>
+        <button type="button" class="hub-card" id="hubEditHero"><span class="hub-ico">🏠</span><span>Hero text</span></button>
+        <button type="button" class="hub-card" id="hubEditAbout"><span class="hub-ico">👤</span><span>About</span></button>
+        <button type="button" class="hub-card" id="hubEditSkills"><span class="hub-ico">⚡</span><span>Skills</span></button>
+        <button type="button" class="hub-card" id="hubEditProjects"><span class="hub-ico">🚀</span><span>Projects</span></button>
+        <button type="button" class="hub-card" id="goToInternBtn"><span class="hub-ico">💼</span><span>Internships</span></button>
+        <button type="button" class="hub-card" id="goToCertsBtn"><span class="hub-ico">🏆</span><span>Certificates</span></button>
+        <button type="button" class="hub-card" id="hubEditEducation"><span class="hub-ico">🎓</span><span>Education</span></button>
+        <button type="button" class="hub-card" id="hubEditContact"><span class="hub-ico">✉</span><span>Contact</span></button>
+      </div>
+
+      <h4 class="owner-section-label">Resume (PDF)</h4>
+      <p class="resume-status-name" id="resumeFileName">No resume</p>
+      <input type="file" id="resumeFileInput" class="form-input-file" accept=".pdf,application/pdf" />
+      <div class="owner-actions">
+        <button type="button" class="btn btn-primary btn-sm" id="resumeUploadBtn">Save resume</button>
+        <button type="button" class="btn btn-outline btn-sm" id="resumePreviewBtn" disabled>Preview</button>
+        <button type="button" class="btn btn-outline btn-sm" id="resumeExportBtn" disabled>Export</button>
+        <button type="button" class="btn btn-outline btn-danger-outline btn-sm" id="resumeDeleteBtn" disabled>Delete</button>
+      </div>
+
+      <hr class="modal-divider" />
+      <button type="button" class="btn btn-ghost btn-sm" id="ownerChangePinBtn">Change passkey</button>
+      <button type="button" class="btn btn-outline btn-sm" id="ownerLogoutBtn">🔒 Lock portfolio</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Built by Atharva Mukwane</p>
+      <p class="footer-year">&copy; <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="themes.js"></script>
+  <script src="content.js"></script>
+</body>
+</html>
